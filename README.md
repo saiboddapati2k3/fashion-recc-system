@@ -14,21 +14,6 @@ A **content-based fashion image recommendation system** that retrieves visually 
 
 ---
 
-## 🖼️ Demo
-
-Upload any fashion product image (like a shoe, t-shirt, or dress), and the app returns **5 most visually similar items** from the dataset.
-
-> 📷 Screenshots can be added here after running the app
-
----
-
-## 📁 Dataset
-
-This project uses the **Fashion Product Images (Small)** dataset from Kaggle:  
-🔗 [https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)
-
-> ⚠️ **Note:** You must download the dataset manually from Kaggle before running the app.
-
 ### Place the files as follows:
 
 
@@ -44,80 +29,89 @@ fashion-recc-system/
 └── README.md
 
 
----
+------
 
-## ⚙️ Setup Instructions
+## 🛠️ Installation Guide
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/fashion-recommender.git
-   cd fashion-recommender
+### ✅ 1. Create a virtual environment
 
-Create a virtual environment
-
-bash
-Copy
-Edit
+```bash
 python3 -m venv venv
 source venv/bin/activate
-Install the dependencies
+```
 
-bash
-Copy
-Edit
+### ✅ 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
-Download and prepare the dataset
+```
 
-Download from Kaggle
+### ✅ 3. Download and prepare the dataset
 
-Place all images in the images/ folder
+- Download from Kaggle:  
+  [Fashion Product Images (Small)](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)
 
-Place styles.csv in the root directory
+- Place files as follows:
+  - All image files → `images/` folder
+  - `styles.csv` → project root
 
-Generate image embeddings and FAISS index
+---
 
-bash
-Copy
-Edit
+## 🔍 Generate Embeddings & Build Index
+
+Run the following script to extract image embeddings and build the FAISS index:
+
+```bash
 python embeddings.py
-Run the Streamlit app
+```
 
-bash
-Copy
-Edit
+---
+
+## 🚀 Run the Streamlit App
+
+Start the interactive web app:
+
+```bash
 streamlit run app.py
-🧠 Tech Stack
-Python 3.10+
+```
 
-PyTorch – for ResNet50 model and feature extraction
+---
 
-FAISS – for fast vector similarity search
+## 🧠 Tech Stack
 
-Streamlit – frontend web interface
+- **Python 3.10+**
+- **PyTorch** – ResNet50 for feature extraction
+- **FAISS** – Efficient similarity search
+- **Streamlit** – Lightweight frontend UI
+- **NumPy, Pandas, Pillow** – Data processing and image loading
 
-Pandas, NumPy, Pillow – for image and metadata handling
+---
 
-⏱ Performance
-~44,000 fashion product images
+## ⏱️ Performance
 
-~5 ms retrieval time per query
+- 📦 ~**44,000** fashion product images  
+- ⚡ ~**5 ms** retrieval time per image query  
+- 📐 Embedding size: **2048 dimensions**  
+- 🔎 Index type: `FAISS IndexFlatL2`
 
-Embedding size: 2048-d
+---
 
-Index type: FAISS IndexFlatL2
+## 🔮 Future Enhancements
 
-🧩 Future Enhancements
- Add CLIP support for text + image recommendations
+- [ ] Add **CLIP** support for **multimodal (image + text)** recommendations
+- [ ] Implement advanced **filtering** by category, gender, color, etc.
+- [ ] Include **product details** in search results
+- [ ] Deploy to **Hugging Face Spaces** or **Streamlit Cloud**
 
- Add filters (category, color, gender, etc.)
+---
 
- Include product details in the UI
+## 👨‍💻 Author
 
- Deploy to Hugging Face Spaces or Streamlit Cloud
+**Sai Boddapati**  
+Built as a showcase project in deep learning, computer vision, and recommender systems.
 
-👨‍💻 Author
-Sai Boddapati
-Built as a project to demonstrate practical skills in deep learning, computer vision, and recommender systems.
+---
 
-📄 License
-This project is licensed under the MIT License – feel free to use and modify.
+## 📄 License
+
+Licensed under the MIT License – feel free to use and modify.
