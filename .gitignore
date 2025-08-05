@@ -1,0 +1,38 @@
+# Python virtual environment
+venv310/
+env/
+*.venv310
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating System and IDE files
+.DS_Store
+.idea/
+.vscode/
+
+# Datasets - BE CAREFUL
+# Only ignore if your dataset is too large for Git.
+# If you have a small CSV, you might want to keep it.
+# For large image folders or data files, add them here.
+data/
+images/
+*.zip
+
+# Model files
+models/
+*.pt
+*.h5
+*.pkl
+*.npy
+*.bin
+
+# Log files
+*.log
+
+# Build artifacts
+build/
+dist/
